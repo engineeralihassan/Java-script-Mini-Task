@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        text-align: center;
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: blueviolet;
+      }
+      div {
+        display: inline-block;
+      }
+      h1 {
+        color: #fff;
+        border: 1px solid black;
+        padding: 10px 20px;
+      }
+      button {
+        padding: 10px 60px;
+        font-size: 2rem;
+        color: #fff;
+        background: #222;
+      }
+      #table {
+        display: block;
+        margin-top: 20px;
+      }
+      td,
+      th {
+        border: 1px solid black;
+        padding: 5px 10px;
+        color: #fff;
+        font-family: sans-serif;
+        font-size: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <center><h1>Arrays of object table in HTML CSS java script</h1></center>
+      <button>Gett table</button>
+      <div id="table"></div>
+    </div>
+    <script>
+      let button = document.querySelector("button");
+      let mytable = document.getElementById("table");
+      let employs = [
+        {
+          name: "Ali",
+          age: 20,
+          country: "pakistan",
+          desination: "Full Stack developer",
+        },
+        {
+          name: "Hassan",
+          age: 20,
+          country: "pakistan",
+          desination: "Flutter app developer",
+        },
+        {
+          name: "Jonas",
+          age: 44,
+          country: "portgual",
+          desination: "Senior java script developer",
+        },
+        {
+          name: "Rohit",
+          age: 18,
+          country: "india",
+          desination: "Wordpress develope",
+        },
+      ];
+      let headers = ["name", "age", "country", "desination"];
+
+      button.addEventListener("click", () => {
+        let table = document.createElement("table");
+        let headerrow = document.createElement("tr");
+        headers.forEach((headertext) => {
+          let header = document.createElement("th");
+          let textNode = document.createTextNode(headertext);
+          header.appendChild(textNode);
+          headerrow.appendChild(header);
+        });
+        table.appendChild(headerrow);
+
+        employs.forEach((emp) => {
+          let row = document.createElement("tr");
+          Object.values(emp).forEach((text) => {
+            let cell = document.createElement("td");
+            let textNode = document.createTextNode(text);
+            cell.appendChild(textNode);
+            row.appendChild(cell);
+          });
+          table.appendChild(row);
+        });
+        mytable.appendChild(table);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wovel counter App | HTML CSS Java scrit</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:ital,wght@0,400;0,700;1,300&display=swap");
+      * {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(#af67e9, #6565e7);
+        font-family: "Roboto", sans-serif;
+      }
+      .box {
+        position: relative;
+        width: 750px;
+        background: #fff;
+        border-radius: 20px;
+        padding: 20px;
+      }
+      .box h4 {
+        color: #555;
+        margin-bottom: 10px;
+        font-size: 2rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+      .box textarea {
+        position: relative;
+        width: 80%;
+        height: 250px;
+        resize: none;
+        border-radius: 20px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        outline: none;
+        padding: 15px;
+        font-size: 1.5rem;
+        color: #555;
+      }
+      .box p {
+        position: absolute;
+        right: 32px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-size: 2rem;
+        color: #555;
+      }
+      .box p span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        height: 80px;
+        background: #6565e7;
+        color: #fff;
+        border-radius: 50%;
+        transition: all 0.5s;
+      }
+      .box p span.blink {
+        box-shadow: 0px 0px 6px #6565e7, 0px 0px 12px #6565e7,
+          0px 0px 18px #6565e7, 0px 0px 24px #6565e7;
+      }
+      /* make it responsive 
+       */
+      @media (max-width: 768px) {
+        .box {
+          width: 580px;
+        }
+        .box p {
+          font-size: 1.5rem;
+          right: 26px;
+        }
+      }
+      @media (max-width: 600px) {
+        .box {
+          width: 300px;
+        }
+        .box h4 {
+          font-size: 1.4rem;
+        }
+
+        .box textarea {
+          width: 100% !important;
+        }
+        .box p {
+          position: relative;
+          top: 0;
+          right: 0;
+          transform: translateY(0);
+          margin-bottom: 10px;
+          margin-top: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h4>vowel counter</h4>
+      <textarea
+        name=""
+        id=""
+        cols="30"
+        rows="10"
+        onkeyup="counterFunc(this.value);"
+      ></textarea>
+      <p>Vowel <span id="vowel-counter">0</span></p>
+    </div>
+    <script type="text/javascript">
+      let vowelCount = document.getElementById("vowel-counter");
+      function counterFunc(str) {
+        str = str.toLowerCase();
+
+        let vowArr = ["a", "e", "i", "o", "u"];
+        counter = 0;
+        for (let letter of str) {
+          if (vowArr.includes(letter)) {
+            counter++;
+            vowelCount.classList.add("blink");
+          } else {
+            vowelCount.classList.remove("blink");
+          }
+        }
+        console.log(counter);
+        vowelCount.innerHTML = counter;
+      }
+    </script>
+  </body>
+</html>
