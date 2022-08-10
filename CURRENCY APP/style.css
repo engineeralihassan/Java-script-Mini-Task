@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  /* background: linear-gradient(315deg, #0066ff, #00ffcc); */
+  background-color: blueviolet;
+
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  background: whitesmoke;
+  /* box-shadow: 2px 0px 2px 2px #222; */
+
+  border-radius: 8px;
+  padding: 30px 50px;
+  width: 490px;
+}
+h2 {
+  color: #fff;
+  background-color: goldenrod;
+  padding: 10px 20px;
+  height: 50px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  width: 100%;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+.container .box {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+}
+div {
+  width: 100%;
+}
+select {
+  margin-top: 1rem;
+  width: 95%;
+  height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background: goldenrod;
+  color: #fff;
+  outline: none;
+  margin: 0.2rem 0;
+  padding: 0 1rem;
+  border-radius: 10px;
+  border: none;
+}
+input {
+  margin-top: 2rem;
+  width: 95%;
+  height: 40px;
+  font-size: 1rem;
+  margin: 0.2rem 0;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding: 0 1rem;
+  background-color: blueviolet;
+  color: #fff;
+  font-family: sans-serif;
+}
+.btn {
+  margin-top: 1rem;
+  width: 96%;
+  height: 40px;
+  background-color: #222;
+  border: 3px solid goldenrod;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 10px 20px;
+}
